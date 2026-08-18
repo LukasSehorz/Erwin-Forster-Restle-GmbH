@@ -1,46 +1,35 @@
-import arbeitSpengler from "@/assets/Arbeit_Spengler.jpg.asset.json";
-import dachGaube1 from "@/assets/Dach_Gaube1.jpg.asset.json";
-import dachGaube2 from "@/assets/Dach_Gaube2.jpg.asset.json";
-import dachKupfer from "@/assets/Dach_kupfer.jpg.asset.json";
-import dach01 from "@/assets/Dach01.jpg.asset.json";
-import dachAlu from "@/assets/Dach-Alu.jpg.asset.json";
-import taubenabwehr from "@/assets/Taubenabwehr.jpg.asset.json";
-import zimmerer from "@/assets/zimmerer.jpg.asset.json";
-import zwiebelturm01 from "@/assets/zwiebelturm01.jpg.asset.json";
-import logo from "@/assets/cropped-ER_logo-e1614101004758.png.asset.json";
-
 /**
- * Die Fotos liegen auf dem Asset-Speicher von Lovable und werden dort unter
- * `/__l5e/…` ausgeliefert. Diesen Pfad kennt nur der Lovable-Server – lokal
- * läuft er ins Leere und die Bilder blieben leer.
+ * Vorhandene Fotos des Betriebs, nach Dateiname.
  *
- * Deshalb liegen dieselben Dateien zusätzlich unter `public/fotos/`. In der
- * lokalen Entwicklung wird diese Kopie verwendet, im Deployment unverändert
- * die Original-URL von Lovable.
+ * Die Dateien liegen unter `public/fotos/` und werden damit vom Server der
+ * Website selbst ausgeliefert – lokal wie im Deployment unter demselben Pfad.
  *
  * Bewusst nicht `public/assets/`: Dieser Ordner landet im Build im selben
  * Verzeichnis wie die gehashten Bundles von Vite, die per `_headers` ein Jahr
  * unveränderlich ausgeliefert werden – für austauschbare Fotos ungeeignet.
+ *
+ * Die Dateien in `src/assets/*.asset.json` verweisen dagegen auf den
+ * Asset-Speicher von Lovable und werden nur unter `/__l5e/…` bedient. Diesen
+ * Pfad kennt ausschließlich der Lovable-Server; auf Netlify läuft er ins Leere.
+ * Deshalb liegen die Fotos hier im Projekt.
+ *
+ * Neue Fotos nach `public/fotos/` legen und hier ergänzen – die Seiten greifen
+ * automatisch darauf zu, solange der Dateiname im <Bild datei="..."> übereinstimmt.
  */
-function quelle(asset: { url: string; original_filename: string }): string {
-  return import.meta.env.DEV ? `/fotos/${asset.original_filename}` : asset.url;
-}
+const dateinamen = [
+  "Arbeit_Spengler.jpg",
+  "Dach_Gaube1.jpg",
+  "Dach_Gaube2.jpg",
+  "Dach_kupfer.jpg",
+  "Dach01.jpg",
+  "Dach-Alu.jpg",
+  "Taubenabwehr.jpg",
+  "zimmerer.jpg",
+  "zwiebelturm01.jpg",
+] as const;
 
-/**
- * Vorhandene Fotos des Betriebs, nach Dateiname.
- * Neue Fotos hier ergänzen – die Seiten greifen automatisch darauf zu,
- * solange der Dateiname im <Bild datei="..."> übereinstimmt.
- */
-export const bilder: Record<string, string> = {
-  "Arbeit_Spengler.jpg": quelle(arbeitSpengler),
-  "Dach_Gaube1.jpg": quelle(dachGaube1),
-  "Dach_Gaube2.jpg": quelle(dachGaube2),
-  "Dach_kupfer.jpg": quelle(dachKupfer),
-  "Dach01.jpg": quelle(dach01),
-  "Dach-Alu.jpg": quelle(dachAlu),
-  "Taubenabwehr.jpg": quelle(taubenabwehr),
-  "zimmerer.jpg": quelle(zimmerer),
-  "zwiebelturm01.jpg": quelle(zwiebelturm01),
-};
+export const bilder: Record<string, string> = Object.fromEntries(
+  dateinamen.map((name) => [name, `/fotos/${name}`]),
+);
 
-export const logoUrl = quelle(logo);
+export const logoUrl = "/fotos/cropped-ER_logo-e1614101004758.png";

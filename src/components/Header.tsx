@@ -9,19 +9,28 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+      {/*
+        Breiter als der Inhalt darunter (max-w-6xl): Acht Menuepunkte, Logo und
+        Telefonnummer brauchen mehr Platz, sonst bricht die Leiste um.
+      */}
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOffen(false)}>
           <LogoZeichen />
           <span className="leading-tight">
-            <span className="block text-lg font-bold">Erwin Restle GmbH</span>
-            <span className="block text-xs text-muted-foreground">
+            <span className="block text-lg font-bold whitespace-nowrap">Erwin Restle GmbH</span>
+            <span className="hidden text-xs whitespace-nowrap text-muted-foreground xl:block">
               Spenglerei · Dachdeckerei · München
             </span>
           </span>
         </Link>
 
-        <nav aria-label="Hauptnavigation" className="hidden lg:block">
-          <ul className="flex items-center gap-6 text-[17px]">
+        {/*
+          Acht Menuepunkte, Logo und Telefonnummer passen erst ab xl nebeneinander.
+          Darunter uebernimmt das Menue mit dem Burger-Button, sonst bricht die
+          Leiste auf mehrere Zeilen um.
+        */}
+        <nav aria-label="Hauptnavigation" className="hidden xl:block">
+          <ul className="flex items-center gap-4 text-[15px] whitespace-nowrap">
             {navigation.map((punkt) => (
               <li key={punkt.to}>
                 <Link
@@ -49,7 +58,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={betrieb.telefonLink}
-            className="hidden items-center gap-2 border border-primary px-4 py-2 text-[17px] font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground md:inline-flex"
+            className="hidden items-center gap-2 border border-primary px-4 py-2 text-[17px] font-semibold whitespace-nowrap text-primary transition-colors hover:bg-primary hover:text-primary-foreground md:inline-flex"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             {betrieb.telefonAnzeige}
@@ -59,7 +68,7 @@ export function Header() {
             onClick={() => setOffen((v) => !v)}
             aria-expanded={offen}
             aria-controls="hauptmenue-mobil"
-            className="inline-flex items-center gap-2 border border-border px-3 py-2 text-[17px] lg:hidden"
+            className="inline-flex items-center gap-2 border border-border px-3 py-2 text-[17px] whitespace-nowrap xl:hidden"
           >
             {offen ? (
               <X className="h-5 w-5" aria-hidden="true" />
@@ -75,7 +84,7 @@ export function Header() {
         <nav
           id="hauptmenue-mobil"
           aria-label="Hauptnavigation mobil"
-          className="border-t border-border bg-background lg:hidden"
+          className="border-t border-border bg-background xl:hidden"
         >
           <ul className="mx-auto max-w-6xl px-5 py-2">
             {navigation.map((punkt) => (
