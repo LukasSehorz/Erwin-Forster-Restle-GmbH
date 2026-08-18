@@ -14,12 +14,16 @@ import logo from "@/assets/cropped-ER_logo-e1614101004758.png.asset.json";
  * `/__l5e/…` ausgeliefert. Diesen Pfad kennt nur der Lovable-Server – lokal
  * läuft er ins Leere und die Bilder blieben leer.
  *
- * Deshalb liegen dieselben Dateien zusätzlich unter `public/assets/`. In der
+ * Deshalb liegen dieselben Dateien zusätzlich unter `public/fotos/`. In der
  * lokalen Entwicklung wird diese Kopie verwendet, im Deployment unverändert
  * die Original-URL von Lovable.
+ *
+ * Bewusst nicht `public/assets/`: Dieser Ordner landet im Build im selben
+ * Verzeichnis wie die gehashten Bundles von Vite, die per `_headers` ein Jahr
+ * unveränderlich ausgeliefert werden – für austauschbare Fotos ungeeignet.
  */
 function quelle(asset: { url: string; original_filename: string }): string {
-  return import.meta.env.DEV ? `/assets/${asset.original_filename}` : asset.url;
+  return import.meta.env.DEV ? `/fotos/${asset.original_filename}` : asset.url;
 }
 
 /**
