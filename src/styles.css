@@ -1,0 +1,130 @@
+@import "tailwindcss" source(none);
+@source "../src";
+
+/*
+ * Erwin Restle GmbH — Designsystem
+ * Rot (Dachziegel) nur als Akzent, Anthrazit für Text, warmes Grau für Flächen.
+ */
+
+@theme inline {
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sand: var(--sand);
+  --color-ink: var(--foreground);
+}
+
+:root {
+  --radius: 3px;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.267 0 0); /* #2B2B2B */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.267 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.267 0 0);
+  --primary: oklch(0.514 0.174 27.5); /* #C0392B */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.958 0.005 67); /* #F4F2EF */
+  --secondary-foreground: oklch(0.267 0 0);
+  --muted: oklch(0.958 0.005 67);
+  --muted-foreground: oklch(0.47 0.005 67);
+  --accent: oklch(0.958 0.005 67);
+  --accent-foreground: oklch(0.267 0 0);
+  --destructive: oklch(0.514 0.174 27.5);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.89 0.004 67);
+  --input: oklch(0.84 0.004 67);
+  --ring: oklch(0.514 0.174 27.5);
+  --sand: oklch(0.958 0.005 67);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+}
+
+/* Sanftes Einblenden beim Scrollen */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
+
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
