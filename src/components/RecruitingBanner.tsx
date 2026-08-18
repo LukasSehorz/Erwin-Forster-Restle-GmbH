@@ -10,7 +10,7 @@ export function RecruitingBanner() {
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-2xl">
                 <h2 className="text-2xl md:text-3xl">
-                  Wir suchen Verstärkung – Spengler, Monteure und Azubis (m/w/d)
+                  Wir suchen Verstärkung – Dachdecker, Spengler, Monteure und Azubis (m/w/d)
                 </h2>
                 <p className="mt-3 text-lg text-muted-foreground">
                   Feste Mannschaft, Baustellen im Raum München und Umgebung, abends daheim. Meld

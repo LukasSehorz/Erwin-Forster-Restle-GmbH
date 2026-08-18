@@ -11,17 +11,17 @@ import { Phone, Mail, MessageCircle } from "lucide-react";
 export const Route = createFileRoute("/karriere")({
   head: () => ({
     meta: [
-      { title: "Jobs für Spengler und Monteure in München | Erwin Restle GmbH" },
+      { title: "Jobs für Dachdecker, Spengler und Monteure in München | Erwin Restle GmbH" },
       {
         name: "description",
         content:
-          "Offene Stellen in München: Spengler, Monteure und Auszubildende (m/w/d). Feste Mannschaft, Baustellen im Raum München und Umgebung, abends daheim.",
+          "Offene Stellen in München: Dachdecker, Spengler, Monteure und Auszubildende (m/w/d). Feste Mannschaft, Baustellen im Raum München und Umgebung, abends daheim.",
       },
       { property: "og:title", content: "Wir suchen Verstärkung – Jobs in München" },
       {
         property: "og:description",
         content:
-          "Spengler, Monteure und Azubis (m/w/d) für einen inhabergeführten Betrieb in Allach-Untermenzing.",
+          "Dachdecker, Spengler, Monteure und Azubis (m/w/d) für einen inhabergeführten Betrieb in Allach-Untermenzing.",
       },
       { property: "og:url", content: "/karriere" },
     ],
@@ -46,6 +46,25 @@ const stellen = [
     ],
     bieten: [
       "Abwechslung: von der Standardrinne bis zur Sonderanfertigung",
+      "Fortbildungen und Weiterbildungen",
+      "Pünktliche Bezahlung",
+    ],
+  },
+  {
+    titel: "Dachdecker/in (m/w/d)",
+    aufgaben: [
+      "Steil- und Flachdächer neu eindecken und sanieren",
+      "Abdichtungsarbeiten an Dach, Terrasse und Anschlüssen",
+      "Dachwartungen, Reparaturen und Einbau von Dachflächenfenstern",
+      "Allgemeine Reinigungsarbeiten rund um das Dach",
+    ],
+    erwartung: [
+      "Ausbildung als Dachdecker, gern auch Berufserfahrung am Steil- oder Flachdach",
+      "Sorgfalt bei Anschlüssen und Abdichtungen",
+      "Schwindelfreiheit",
+    ],
+    bieten: [
+      "Abwechslung: Ziegeleindeckung, Flachdach und energetische Sanierung",
       "Fortbildungen und Weiterbildungen",
       "Pünktliche Bezahlung",
     ],
@@ -103,7 +122,7 @@ function Karriere() {
       <SeitenKopf
         kicker="Offene Stellen"
         ueberschrift="Wir suchen Verstärkung"
-        einleitung="Spengler, Monteure und Azubis. Meld dich einfach – ein Anruf reicht, Unterlagen können warten."
+        einleitung="Dachdecker, Spengler, Monteure und Azubis. Meld dich einfach – ein Anruf reicht, Unterlagen können warten."
       />
 
       <Abschnitt>
