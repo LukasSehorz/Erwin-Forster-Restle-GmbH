@@ -1,0 +1,21 @@
+# Netlify-Konfiguration für die Website der Erwin Restle GmbH.
+#
+# Die Datei legt Build-Befehl, Ausgabeverzeichnis und Node-Version im Repository
+# fest, damit sie nicht von den Einstellungen in der Netlify-Oberfläche abhängen.
+#
+# Wichtig ist vor allem NODE_VERSION: vite und nitro verlangen Node
+# ^20.19 || >=22.12, @tanstack/react-start sogar >=22.12. Ohne Vorgabe nutzt
+# Netlify seine eigene Standardversion, die älter sein kann – der Build bricht
+# dann schon beim Start ab.
+#
+# `publish` zeigt auf das Verzeichnis, das Nitro mit dem Netlify-Preset für die
+# statischen Dateien erzeugt. Den SSR-Server legt Nitro daneben unter
+# .netlify/functions-internal/ ab; den findet Netlify von selbst, deshalb ist
+# hier bewusst kein `functions`-Eintrag gesetzt.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22.12.0"
