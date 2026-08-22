@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bild } from "@/components/Bild";
 import { Reveal } from "@/components/Reveal";
 import { SeitenKopf, Abschnitt } from "@/components/SeitenKopf";
@@ -7,17 +7,17 @@ import { RecruitingBanner } from "@/components/RecruitingBanner";
 export const Route = createFileRoute("/dachdeckerei")({
   head: () => ({
     meta: [
-      { title: "Dachdeckerei München – neu decken, sanieren, begrünen | Erwin Restle GmbH" },
+      { title: "Dachdeckerei München – neu decken, sanieren, abdichten | Erwin Restle GmbH" },
       {
         name: "description",
         content:
-          "Dachdecker in München Allach-Untermenzing: Dächer neu decken und reparieren, abdichten, Brandschutzwände, energetische Dachsanierung, Dachflächenfenster und Dachbegrünung.",
+          "Dachdecker in München Allach-Untermenzing: Dächer neu decken und reparieren, abdichten, Brandschutzwände, energetische Dachsanierung und Dachflächenfenster.",
       },
       { property: "og:title", content: "Dachdeckerei in München" },
       {
         property: "og:description",
         content:
-          "Dächer neu decken und reparieren, abdichten, energetisch sanieren, Dachflächenfenster und Dachbegrünung – aus Allach-Untermenzing.",
+          "Dächer neu decken und reparieren, abdichten, energetisch sanieren und Dachflächenfenster einbauen – aus Allach-Untermenzing.",
       },
       { property: "og:url", content: "/dachdeckerei" },
     ],
@@ -54,25 +54,6 @@ const themen: Thema[] = [
   {
     titel: "Dachflächenfenster",
     text: "Einbau und Austausch von Dachflächenfenstern – herstellerunabhängig und mit dichtem Anschluss an die Dachhaut. Dazu die allgemeine Wartung und Reinigung der Fenster: Beschläge nachstellen, Dichtungen prüfen, Rahmen und Verglasung säubern.",
-  },
-];
-
-const begruenung = [
-  {
-    titel: "Extensive Begrünung",
-    text: "Pflegeleichter Aufbau mit niedriger Aufbauhöhe und geringem Gewicht, meist mit Sedum, Moosen und Kräutern. Die passende Lösung für Garagen, Anbauten und Flachdächer, die nicht betreten werden.",
-  },
-  {
-    titel: "Intensive Begrünung",
-    text: "Höherer Schichtaufbau mit größerer Pflanzenvielfalt – bis hin zu Stauden, Sträuchern und nutzbaren Dachgärten. Dafür prüfen wir vorab Statik, Zugang und Bewässerung.",
-  },
-  {
-    titel: "Aufbau und Abdichtung",
-    text: "Wurzelfeste Abdichtung, Schutz-, Drainage- und Filterschicht, Substrat und Bepflanzung – fachgerecht geschichtet, inklusive Anschlüsse, Rand- und Kiesstreifen sowie Notüberlauf.",
-  },
-  {
-    titel: "Pflege und Wartung",
-    text: "Begrünte Dächer brauchen regelmäßige Kontrolle: Aufwuchs entfernen, Abläufe und Notüberläufe frei halten, Randbereiche prüfen. Das übernehmen wir auf Wunsch dauerhaft.",
   },
 ];
 
@@ -132,37 +113,19 @@ function Dachdeckerei() {
       <Abschnitt grau>
         <Reveal>
           <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-4xl">
-              Dachbegrünung – nachhaltig, funktional und langlebig
-            </h2>
+            <h2 className="text-3xl md:text-4xl">Dachbegrünung</h2>
             <p className="mt-5 text-lg text-muted-foreground">
-              Wir realisieren fachgerechte Dachbegrünungen und stimmen Aufbau, Abdichtung und
-              Begrünung auf das jeweilige Dach ab. Begrünte Dächer halten Regenwasser zurück,
-              verbessern das Mikroklima und schützen die Dachabdichtung zusätzlich vor Hitze,
-              Frost und UV-Strahlung – die Fläche hält dadurch in der Regel länger.
+              Die wurzelfeste Abdichtung, die Anschlüsse und die Entwässerung für ein begrüntes Dach
+              führen wir aus. Die Begrünung selbst übernimmt ein spezialisierter Fachbetrieb, an den
+              wir Sie gerne vermitteln.
             </p>
-          </div>
-        </Reveal>
-
-        <div className="mt-10 grid gap-8 sm:grid-cols-2">
-          {begruenung.map((punkt, index) => (
-            <Reveal key={punkt.titel} delay={(index % 3) as 0 | 1 | 2}>
-              <div className="border-t-2 border-primary pt-4">
-                <h3 className="text-2xl">{punkt.titel}</h3>
-                <p className="mt-3 text-lg text-muted-foreground">{punkt.text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal>
-          <div className="mt-10 max-w-3xl border-l-2 border-primary pl-6">
-            <h3 className="text-2xl">Sonderformen</h3>
-            <p className="mt-3 text-lg text-muted-foreground">
-              Je nach Anforderung sind auch Retentionsgründächer mit erhöhtem Wasserrückhalt,
-              Biodiversitätsgründächer mit heimischer Bepflanzung sowie Solargründächer
-              möglich, bei denen Photovoltaik und Begrünung auf derselben Fläche kombiniert
-              werden.
+            <p className="mt-5 text-lg">
+              <Link
+                to="/dachbegruenung"
+                className="font-semibold text-primary underline underline-offset-4"
+              >
+                Mehr zur Dachbegrünung
+              </Link>
             </p>
           </div>
         </Reveal>

@@ -33,3 +33,6 @@ export const bilder: Record<string, string> = Object.fromEntries(
 );
 
 export const logoUrl = "/fotos/cropped-ER_logo-e1614101004758.png";
+
+/** Panorama über die Münchner Dächer – vollflächiges Bild im Hero der Startseite. */
+export const heroUrl = "/fotos/hero-muenchen-daecher.png";

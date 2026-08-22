@@ -16,15 +16,50 @@ export const betrieb = {
   /** Zusatz unter den Bürozeiten – E-Mail-Adresse dabei immer verlinken. */
   emailHinweis: "Jederzeit per E-Mail erreichbar",
   gegruendet: 1985,
+  /** Kurzer Claim für die Topbar über dem Logo. */
+  claim: "Spengler- und Dachdeckerarbeiten aus Meisterhand – seit 1985.",
 } as const;
 
+/**
+ * Hauptnavigation als zwei Ebenen: Einträge mit `kinder` klappen im Header als
+ * Ordner auf und haben selbst keine eigene Seite. Header und Footer lesen beide
+ * aus dieser Liste – neue Seiten hier ergänzen, dann erscheinen sie überall.
+ */
 export const navigation = [
   { to: "/", label: "Start" },
-  { to: "/spenglerei", label: "Spenglerei" },
-  { to: "/dachdeckerei", label: "Dachdeckerei" },
-  { to: "/zimmerei", label: "Zimmerei & Holzbau" },
-  { to: "/sekuranten", label: "Sekuranten" },
-  { to: "/taubenabwehr", label: "Taubenabwehr" },
-  { to: "/betrieb", label: "Betrieb & Team" },
+  {
+    label: "Dachbau",
+    kinder: [
+      { to: "/spenglerei", label: "Spenglerei" },
+      { to: "/dachdeckerei", label: "Dachdeckerei" },
+      { to: "/zimmerei", label: "Zimmerei & Holzbau" },
+    ],
+  },
+  { to: "/reparatur-dachwartung", label: "Reparatur & Dachwartung" },
+  {
+    label: "Sicherheit am Dach",
+    kinder: [
+      { to: "/sekuranten", label: "Absturzsicherung" },
+      { to: "/taubenabwehr", label: "Taubenabwehr" },
+    ],
+  },
+  { to: "/dachbegruenung", label: "Dachbegrünung" },
+  {
+    label: "Über uns",
+    kinder: [
+      { to: "/ueber-uns", label: "Über uns" },
+      { to: "/team", label: "Team" },
+    ],
+  },
   { to: "/karriere", label: "Karriere" },
 ] as const;
+
+type NavEintrag = (typeof navigation)[number];
+type NavOrdner = Extract<NavEintrag, { readonly kinder: readonly unknown[] }>;
+/** Ein Eintrag mit eigener Seite – oberste Ebene oder Untereintrag eines Ordners. */
+export type NavZiel = Exclude<NavEintrag, NavOrdner> | NavOrdner["kinder"][number];
+
+/** Dieselbe Navigation auf einer Ebene – der Footer listet nur Zielseiten. */
+export const navigationFlach = navigation.flatMap<NavZiel>((punkt) =>
+  "kinder" in punkt ? [...punkt.kinder] : [punkt],
+);

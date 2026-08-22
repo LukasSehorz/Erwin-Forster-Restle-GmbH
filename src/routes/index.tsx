@@ -3,7 +3,7 @@ import { Bild } from "@/components/Bild";
 import { Reveal } from "@/components/Reveal";
 import { RecruitingBanner } from "@/components/RecruitingBanner";
 import { betrieb } from "@/lib/betrieb";
-import { Phone } from "lucide-react";
+import { heroUrl } from "@/lib/bilder";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -12,13 +12,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Erwin Restle GmbH in München Allach-Untermenzing: Spenglerei, Dachdeckerei, Zimmerei, Sekuranten und Taubenabwehr. Seit 1985 in München und Umgebung. Telefon 089 8202 0441.",
+          "Erwin Restle GmbH in München Allach-Untermenzing: Spenglerei, Dachdeckerei, Zimmerei, Reparatur und Dachwartung, Absturzsicherung und Taubenabwehr. Seit 1985 in München und Umgebung. Telefon 089 8202 0441.",
       },
-      { property: "og:title", content: "Dachdeckerei und Spenglerei in München" },
+      { property: "og:title", content: "Ihr Dach in besten Händen – seit 1985" },
       {
         property: "og:description",
         content:
-          "Spenglerei, Dachdeckerei, Zimmerei, Sekuranten und Taubenabwehr aus Allach-Untermenzing – seit 1985. Wir suchen Verstärkung.",
+          "Spenglerei, Dachdeckerei, Zimmerei, Reparatur und Dachwartung, Absturzsicherung und Taubenabwehr aus Allach-Untermenzing – seit 1985.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -27,121 +27,114 @@ export const Route = createFileRoute("/")({
   component: Startseite,
 });
 
-const leistungen = [
+/** Die sechs Leistungskacheln der Startseite, Reihenfolge wie im Raster. */
+const kacheln = [
   {
     titel: "Spenglerei",
     to: "/spenglerei" as const,
     datei: "Dach_kupfer.jpg",
     alt: "Dachfläche aus Kupfer mit angearbeiteter Rinne",
-    text: "Metallarbeiten am Dach sind unsere Spezialität. Wir fertigen Dächer und Bauteile aus Kupfer, Aluminium und Blech, dazu Rinnen, Fallrohre und Kamineinfassungen.",
+    text: "Dächer und Bauteile aus Kupfer, Aluminium und Blech, dazu Rinnen, Fallrohre und Kamineinfassungen.",
   },
   {
     titel: "Dachdeckerei",
     to: "/dachdeckerei" as const,
     datei: "Dach01.jpg",
     alt: "Neu eingedecktes Ziegeldach eines Wohnhauses in München",
-    text: "Wir decken Dächer neu und reparieren sie. Dazu Abdichtungen, Brandschutzwände, energetische Dachsanierung, Dachflächenfenster und Dachbegrünung.",
+    text: "Dächer neu decken und reparieren, abdichten, Brandschutzwände, energetische Dachsanierung und Dachflächenfenster.",
   },
   {
     titel: "Zimmerei & Holzbau",
     to: "/zimmerei" as const,
     datei: "zimmerer.jpg",
     alt: "Zimmerer bei der Arbeit an einer Dachkonstruktion aus Holz",
-    text: "Dachstühle, Fachwerk, Balkone und Carports. Wir fertigen Bauteile aus Holz, errichten sie und setzen sie instand – bis hin zum Innenausbau.",
+    text: "Dachstühle, Fachwerk, Balkone und Carports – gefertigt, errichtet und instand gesetzt.",
   },
   {
-    titel: "Sekuranten",
+    titel: "Reparatur & Dachwartung",
+    to: "/reparatur-dachwartung" as const,
+    datei: "Dach_Gaube2.jpg",
+    alt: "Gaube mit sauberem Anschluss an die Dachfläche",
+    text: "Sturmschäden, undichte Stellen, Rinnenreinigung und die regelmäßige Kontrolle Ihres Dachs.",
+  },
+  {
+    titel: "Absturzsicherung",
     to: "/sekuranten" as const,
     datei: "Dach-Alu.jpg",
     alt: "Dachfläche, die für Wartung und Kontrolle sicher begehbar sein muss",
-    text: "Absturzsicherung und Dachverkehrssicherheit: Einzelanschlagpunkte, Seil- und Schienensysteme sowie sichere Zugänge und Laufwege – inklusive Prüfung und Wartung.",
+    text: "Sekuranten, Seil- und Schienensysteme sowie sichere Zugänge und Laufwege – inklusive Prüfung.",
   },
   {
     titel: "Taubenabwehr",
     to: "/taubenabwehr" as const,
     datei: "Taubenabwehr.jpg",
     alt: "Taubenabwehr mit Spikes auf einem Dachsims",
-    text: "Taubenkot greift Bausubstanz an und ist ein Hygieneproblem. Wir montieren Spikes und Netze fachgerecht – auch an schwer zugänglichen Stellen.",
+    text: "Spikes und Netze, fachgerecht montiert – auch an schwer zugänglichen Stellen.",
   },
 ];
 
 function Startseite() {
   return (
     <>
-      {/* Hero */}
-      <section className="border-b border-border bg-sand">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:grid-cols-[1.05fr_1fr] md:py-16">
-          <Reveal>
-            <p className="mb-3 text-sm font-semibold tracking-widest text-primary uppercase">
-              {betrieb.stadtteil} · München und Umgebung
-            </p>
-            <h1 className="text-4xl md:text-6xl">Dachdeckerei und Spenglerei in München</h1>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground md:text-xl">
-              Familienbetrieb für Dach, Metall und Holz – seit {betrieb.gegruendet} vom Ziegel
-              bis zur Kupferrinne.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={betrieb.telefonLink}
-                className="inline-flex items-center justify-center gap-2 bg-primary px-6 py-4 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/85"
-              >
-                <Phone className="h-5 w-5" aria-hidden="true" />
-                Jetzt anrufen: {betrieb.telefonAnzeige}
-              </a>
-              <Link
-                to="/karriere"
-                className="inline-flex items-center justify-center border border-foreground px-6 py-4 text-lg font-semibold transition-colors hover:bg-foreground hover:text-background"
-              >
-                Offene Stellen
-              </Link>
-            </div>
-          </Reveal>
+      <Hero />
 
-          <Reveal delay={1}>
-            <Bild
-              datei="Arbeit_Spengler.jpg"
-              alt="Gelbes Münchner Wohnhaus mit neu gedecktem Ziegeldach und Kupferrinne"
-              verhaeltnis="4/3"
-              prioritaet
-            />
+      {/* Begrüßung und Einstieg */}
+      <section>
+        <div className="mx-auto max-w-3xl px-5 py-14 text-center md:py-20">
+          <Reveal>
+            <p className="text-xl font-bold md:text-2xl">
+              Die Erwin Restle GmbH heißt Sie herzlich willkommen. Ihre familiengeführte Spenglerei
+              und Dachdeckerei aus München {betrieb.stadtteil} – seit {betrieb.gegruendet} für
+              fachgerechte Arbeiten aus Meisterhand.
+            </p>
+            <div className="mt-6 space-y-5 text-lg text-muted-foreground">
+              <p>
+                Vom robusten Steildach über moderne Flachdachabdichtungen bis hin zu
+                maßgeschneiderten Spenglerarbeiten: Als erfahrener Meisterbetrieb kümmern wir uns um
+                die Langlebigkeit und Sicherheit Ihres Hauses. Auch bei schnellen Reparaturen oder
+                Sturmschäden stehen wir Ihnen sofort zur Seite.
+              </p>
+              <p>
+                Lassen Sie uns gemeinsam über Ihr Vorhaben sprechen – wir planen Hand in Hand mit
+                Ihnen und erstellen ein transparentes, maßgeschneidertes Angebot.
+              </p>
+              <p>Nehmen Sie einfach Kontakt auf, wir freuen uns auf Ihr Projekt!</p>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Leistungen */}
-      <section>
-        <div className="mx-auto max-w-6xl px-5 py-14 md:py-20">
+      {/* Sechs Kacheln */}
+      <section id="leistungen" className="scroll-mt-24">
+        <div className="mx-auto max-w-6xl px-5 pb-14 md:pb-20">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl">Was wir machen</h2>
+            <h2 className="text-center text-2xl md:text-4xl">
+              Wir sind Ihr kompetenter Partner für Dach, Metall und Holz
+            </h2>
           </Reveal>
-          <div className="mt-10 space-y-14 md:space-y-20">
-            {leistungen.map((leistung, index) => (
-              <Reveal key={leistung.titel} as="article">
-                <div
-                  className={`grid items-center gap-8 md:grid-cols-2 ${
-                    index % 2 === 1 ? "md:[&>figure]:order-2" : ""
-                  }`}
-                >
-                  <Bild
-                    datei={leistung.datei}
-                    alt={leistung.alt}
-                    verhaeltnis="3/2"
-                    className={index % 2 === 1 ? "md:ml-auto md:max-w-[26rem]" : "md:max-w-[26rem]"}
-                  />
-                  <div className={index % 2 === 1 ? "md:order-1" : ""}>
-                    <h3 className="text-2xl md:text-3xl">{leistung.titel}</h3>
-                    <p className="mt-4 max-w-xl text-lg text-muted-foreground">{leistung.text}</p>
-                    <Link
-                      to={leistung.to}
-                      className="mt-5 inline-block text-lg font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
-                    >
-                      Mehr zu {leistung.titel}
-                    </Link>
+          <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {kacheln.map((kachel, index) => (
+              <Reveal key={kachel.to} as="li" delay={(index % 3) as 0 | 1 | 2}>
+                <Link to={kachel.to} className="group block">
+                  <div className="relative">
+                    <Bild datei={kachel.datei} alt={kachel.alt} verhaeltnis="1/1" />
+                    {/* Titel liegt wie in der Vorlage als Overlay auf dem Foto. */}
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"
+                    />
+                    <h3 className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-xl text-white md:text-2xl">
+                      {kachel.titel}
+                    </h3>
                   </div>
-                </div>
+                  <p className="mt-3 text-[17px] text-muted-foreground">{kachel.text}</p>
+                  <span className="mt-2 inline-block font-semibold text-primary underline underline-offset-4 group-hover:text-primary/80">
+                    Mehr erfahren
+                  </span>
+                </Link>
               </Reveal>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -158,12 +151,20 @@ function Startseite() {
                 und Holz kommen bei uns aus einer Hand – das spart Absprachen und Wartezeit.
                 Gearbeitet wird mit einer festen Mannschaft.
               </p>
-              <Link
-                to="/betrieb"
-                className="mt-5 inline-block text-lg font-semibold text-primary underline underline-offset-4 hover:text-primary/80"
-              >
-                Betrieb & Team
-              </Link>
+              <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-lg font-semibold">
+                <Link
+                  to="/ueber-uns"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Über uns
+                </Link>
+                <Link
+                  to="/team"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Unser Team
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -212,5 +213,32 @@ function Startseite() {
         </div>
       </section>
     </>
+  );
+}
+
+/** Vollflächiges Hero-Bild mit dunklem Overlay, Überschrift und Umriss-Button. */
+function Hero() {
+  return (
+    <section className="relative">
+      <img
+        src={heroUrl}
+        alt="Blick über die Münchner Dächer bei Sonnenuntergang"
+        fetchPriority="high"
+        decoding="async"
+        className="h-[58vh] max-h-[640px] min-h-[340px] w-full object-cover"
+      />
+      <span aria-hidden="true" className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-7 px-5 text-center">
+        <h1 className="max-w-4xl text-3xl text-white drop-shadow-md sm:text-4xl md:text-6xl">
+          Ihr Dach in besten Händen – seit {betrieb.gegruendet}
+        </h1>
+        <a
+          href="#leistungen"
+          className="border-2 border-white px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-white hover:text-foreground"
+        >
+          Mehr erfahren
+        </a>
+      </div>
+    </section>
   );
 }

@@ -11,14 +11,18 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BetriebRouteImport } from './routes/betrieb'
+import { Route as DachbegruenungRouteImport } from './routes/dachbegruenung'
 import { Route as DachdeckereiRouteImport } from './routes/dachdeckerei'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as KarriereRouteImport } from './routes/karriere'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as ReparaturDachwartungRouteImport } from './routes/reparatur-dachwartung'
 import { Route as SekurantenRouteImport } from './routes/sekuranten'
 import { Route as SpenglereiRouteImport } from './routes/spenglerei'
 import { Route as TaubenabwehrRouteImport } from './routes/taubenabwehr'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 import { Route as ZimmereiRouteImport } from './routes/zimmerei'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +33,11 @@ const IndexRoute = IndexRouteImport.update({
 const BetriebRoute = BetriebRouteImport.update({
   id: '/betrieb',
   path: '/betrieb',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DachbegruenungRoute = DachbegruenungRouteImport.update({
+  id: '/dachbegruenung',
+  path: '/dachbegruenung',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DachdeckereiRoute = DachdeckereiRouteImport.update({
@@ -56,6 +65,11 @@ const KontaktRoute = KontaktRouteImport.update({
   path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReparaturDachwartungRoute = ReparaturDachwartungRouteImport.update({
+  id: '/reparatur-dachwartung',
+  path: '/reparatur-dachwartung',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SekurantenRoute = SekurantenRouteImport.update({
   id: '/sekuranten',
   path: '/sekuranten',
@@ -71,6 +85,16 @@ const TaubenabwehrRoute = TaubenabwehrRouteImport.update({
   path: '/taubenabwehr',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UeberUnsRoute = UeberUnsRouteImport.update({
+  id: '/ueber-uns',
+  path: '/ueber-uns',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ZimmereiRoute = ZimmereiRouteImport.update({
   id: '/zimmerei',
   path: '/zimmerei',
@@ -80,41 +104,53 @@ const ZimmereiRoute = ZimmereiRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/betrieb': typeof BetriebRoute
+  '/dachbegruenung': typeof DachbegruenungRoute
   '/dachdeckerei': typeof DachdeckereiRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/karriere': typeof KarriereRoute
   '/kontakt': typeof KontaktRoute
+  '/reparatur-dachwartung': typeof ReparaturDachwartungRoute
   '/sekuranten': typeof SekurantenRoute
   '/spenglerei': typeof SpenglereiRoute
   '/taubenabwehr': typeof TaubenabwehrRoute
+  '/team': typeof TeamRoute
+  '/ueber-uns': typeof UeberUnsRoute
   '/zimmerei': typeof ZimmereiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/betrieb': typeof BetriebRoute
+  '/dachbegruenung': typeof DachbegruenungRoute
   '/dachdeckerei': typeof DachdeckereiRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/karriere': typeof KarriereRoute
   '/kontakt': typeof KontaktRoute
+  '/reparatur-dachwartung': typeof ReparaturDachwartungRoute
   '/sekuranten': typeof SekurantenRoute
   '/spenglerei': typeof SpenglereiRoute
   '/taubenabwehr': typeof TaubenabwehrRoute
+  '/team': typeof TeamRoute
+  '/ueber-uns': typeof UeberUnsRoute
   '/zimmerei': typeof ZimmereiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/betrieb': typeof BetriebRoute
+  '/dachbegruenung': typeof DachbegruenungRoute
   '/dachdeckerei': typeof DachdeckereiRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/karriere': typeof KarriereRoute
   '/kontakt': typeof KontaktRoute
+  '/reparatur-dachwartung': typeof ReparaturDachwartungRoute
   '/sekuranten': typeof SekurantenRoute
   '/spenglerei': typeof SpenglereiRoute
   '/taubenabwehr': typeof TaubenabwehrRoute
+  '/team': typeof TeamRoute
+  '/ueber-uns': typeof UeberUnsRoute
   '/zimmerei': typeof ZimmereiRoute
 }
 export interface FileRouteTypes {
@@ -122,54 +158,70 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/betrieb'
+    | '/dachbegruenung'
     | '/dachdeckerei'
     | '/datenschutz'
     | '/impressum'
     | '/karriere'
     | '/kontakt'
+    | '/reparatur-dachwartung'
     | '/sekuranten'
     | '/spenglerei'
     | '/taubenabwehr'
+    | '/team'
+    | '/ueber-uns'
     | '/zimmerei'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/betrieb'
+    | '/dachbegruenung'
     | '/dachdeckerei'
     | '/datenschutz'
     | '/impressum'
     | '/karriere'
     | '/kontakt'
+    | '/reparatur-dachwartung'
     | '/sekuranten'
     | '/spenglerei'
     | '/taubenabwehr'
+    | '/team'
+    | '/ueber-uns'
     | '/zimmerei'
   id:
     | '__root__'
     | '/'
     | '/betrieb'
+    | '/dachbegruenung'
     | '/dachdeckerei'
     | '/datenschutz'
     | '/impressum'
     | '/karriere'
     | '/kontakt'
+    | '/reparatur-dachwartung'
     | '/sekuranten'
     | '/spenglerei'
     | '/taubenabwehr'
+    | '/team'
+    | '/ueber-uns'
     | '/zimmerei'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BetriebRoute: typeof BetriebRoute
+  DachbegruenungRoute: typeof DachbegruenungRoute
   DachdeckereiRoute: typeof DachdeckereiRoute
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
   KarriereRoute: typeof KarriereRoute
   KontaktRoute: typeof KontaktRoute
+  ReparaturDachwartungRoute: typeof ReparaturDachwartungRoute
   SekurantenRoute: typeof SekurantenRoute
   SpenglereiRoute: typeof SpenglereiRoute
   TaubenabwehrRoute: typeof TaubenabwehrRoute
+  TeamRoute: typeof TeamRoute
+  UeberUnsRoute: typeof UeberUnsRoute
   ZimmereiRoute: typeof ZimmereiRoute
 }
 
@@ -187,6 +239,13 @@ declare module '@tanstack/react-router' {
       path: '/betrieb'
       fullPath: '/betrieb'
       preLoaderRoute: typeof BetriebRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dachbegruenung': {
+      id: '/dachbegruenung'
+      path: '/dachbegruenung'
+      fullPath: '/dachbegruenung'
+      preLoaderRoute: typeof DachbegruenungRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dachdeckerei': {
@@ -224,6 +283,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reparatur-dachwartung': {
+      id: '/reparatur-dachwartung'
+      path: '/reparatur-dachwartung'
+      fullPath: '/reparatur-dachwartung'
+      preLoaderRoute: typeof ReparaturDachwartungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sekuranten': {
       id: '/sekuranten'
       path: '/sekuranten'
@@ -245,6 +311,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TaubenabwehrRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ueber-uns': {
+      id: '/ueber-uns'
+      path: '/ueber-uns'
+      fullPath: '/ueber-uns'
+      preLoaderRoute: typeof UeberUnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/zimmerei': {
       id: '/zimmerei'
       path: '/zimmerei'
@@ -258,14 +338,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BetriebRoute: BetriebRoute,
+  DachbegruenungRoute: DachbegruenungRoute,
   DachdeckereiRoute: DachdeckereiRoute,
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,
   KarriereRoute: KarriereRoute,
   KontaktRoute: KontaktRoute,
+  ReparaturDachwartungRoute: ReparaturDachwartungRoute,
   SekurantenRoute: SekurantenRoute,
   SpenglereiRoute: SpenglereiRoute,
   TaubenabwehrRoute: TaubenabwehrRoute,
+  TeamRoute: TeamRoute,
+  UeberUnsRoute: UeberUnsRoute,
   ZimmereiRoute: ZimmereiRoute,
 }
 export const routeTree = rootRouteImport
