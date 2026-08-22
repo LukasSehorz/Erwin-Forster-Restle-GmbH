@@ -3,17 +3,22 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 /**
  * Sanftes Einblenden beim Scrollen: fade + 12 px nach oben.
  * Verzögerung nur für maximal drei gestaffelte Elemente verwenden.
+ *
+ * `stil="falten"` klappt den Inhalt stattdessen um die senkrechte Achse auf –
+ * das ist die Einblendung, die die Vorlage für den Kachelbereich verwendet.
  */
 export function Reveal({
   children,
   delay = 0,
   className = "",
   as: Tag = "div",
+  stil = "einblenden",
 }: {
   children: ReactNode;
   delay?: 0 | 1 | 2;
   className?: string;
   as?: "div" | "section" | "li" | "article";
+  stil?: "einblenden" | "falten";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [sichtbar, setSichtbar] = useState(false);
@@ -39,9 +44,9 @@ export function Reveal({
   return (
     <Tag
       ref={ref as never}
-      className={`reveal ${className}`}
+      className={`${stil === "falten" ? "falten" : "reveal"} ${className}`}
       data-visible={sichtbar ? "true" : "false"}
-      style={{ transitionDelay: `${delay * 90}ms` }}
+      style={stil === "falten" ? undefined : { transitionDelay: `${delay * 90}ms` }}
     >
       {children}
     </Tag>

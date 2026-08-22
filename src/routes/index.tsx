@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Bild } from "@/components/Bild";
 import { Reveal } from "@/components/Reveal";
 import { RecruitingBanner } from "@/components/RecruitingBanner";
 import { betrieb } from "@/lib/betrieb";
-import { heroUrl } from "@/lib/bilder";
+import { bilder, heroUrl } from "@/lib/bilder";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -104,39 +103,35 @@ function Startseite() {
         </div>
       </section>
 
-      {/* Sechs Kacheln */}
-      <section id="leistungen" className="scroll-mt-24">
-        <div className="mx-auto max-w-6xl px-5 pb-14 md:pb-20">
-          <Reveal>
-            <h2 className="text-center text-2xl md:text-4xl">
-              Wir sind Ihr kompetenter Partner für Dach, Metall und Holz
-            </h2>
-          </Reveal>
+      {/* Sechs Kacheln – klappen beim Hereinscrollen auf wie in der Vorlage */}
+      <Reveal as="section" stil="falten" className="scroll-mt-24">
+        <div id="leistungen" className="mx-auto max-w-6xl px-5 pb-14 md:pb-20">
+          <h2 className="text-center text-2xl md:text-4xl">
+            Wir sind Ihr kompetenter Partner für Dach, Metall und Holz
+          </h2>
           <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {kacheln.map((kachel, index) => (
-              <Reveal key={kachel.to} as="li" delay={(index % 3) as 0 | 1 | 2}>
-                <Link to={kachel.to} className="group block">
-                  <div className="relative">
-                    <Bild datei={kachel.datei} alt={kachel.alt} verhaeltnis="1/1" />
-                    {/* Titel liegt wie in der Vorlage als Overlay auf dem Foto. */}
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"
+            {kacheln.map((kachel) => (
+              <li key={kachel.to}>
+                <Link to={kachel.to} className="block">
+                  <figure className="kachel-figur aspect-square">
+                    <img
+                      src={bilder[kachel.datei]}
+                      alt={kachel.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover"
                     />
-                    <h3 className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-xl text-white md:text-2xl">
-                      {kachel.titel}
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-[17px] text-muted-foreground">{kachel.text}</p>
-                  <span className="mt-2 inline-block font-semibold text-primary underline underline-offset-4 group-hover:text-primary/80">
-                    Mehr erfahren
-                  </span>
+                    <figcaption>
+                      <h3 className="kachel-titel text-xl md:text-2xl">{kachel.titel}</h3>
+                      <p className="kachel-text mt-3 text-[17px]">{kachel.text}</p>
+                    </figcaption>
+                  </figure>
                 </Link>
-              </Reveal>
+              </li>
             ))}
           </ul>
         </div>
-      </section>
+      </Reveal>
 
       {/* Betrieb */}
       <section className="bg-sand">
@@ -217,15 +212,19 @@ function Startseite() {
 }
 
 /** Vollflächiges Hero-Bild mit dunklem Overlay, Überschrift und Umriss-Button. */
+/**
+ * Hoehe und Einblendung wie bei der Vorlage gemessen: 50vh hoch, beim Laden
+ * waechst der ganze Block von halber Groesse auf volle.
+ */
 function Hero() {
   return (
-    <section className="relative">
+    <section className="hero-einblenden relative h-[50vh] max-h-[560px] min-h-[320px]">
       <img
         src={heroUrl}
         alt="Blick über die Münchner Dächer bei Sonnenuntergang"
         fetchPriority="high"
         decoding="async"
-        className="h-[58vh] max-h-[640px] min-h-[340px] w-full object-cover"
+        className="h-full w-full object-cover"
       />
       <span aria-hidden="true" className="absolute inset-0 bg-black/45" />
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-7 px-5 text-center">

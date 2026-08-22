@@ -24,7 +24,11 @@ export function Header() {
       <Topbar />
       <Logoband />
 
-      <div className="sticky top-0 z-40 border-y border-border bg-background">
+      {/*
+        Kein Rahmen und darunter Luft bis zum Hero – wie bei der Vorlage
+        gemessen: dort liegen 51 px zwischen Menuezeile und Bild, ohne Linie.
+      */}
+      <div className="sticky top-0 z-40 bg-background pb-[51px]">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 lg:justify-center">
           <nav aria-label="Hauptnavigation" className="hidden lg:block">
             <ul className="flex items-center gap-1 text-[17px] whitespace-nowrap">
@@ -201,7 +205,7 @@ function Ordner({
       <ul
         id={kennung}
         className={`absolute top-full left-0 z-50 min-w-60 border border-border bg-background shadow-lg ${
-          offen ? "block" : "hidden"
+          offen ? "menue-einblenden block" : "hidden"
         }`}
       >
         {kinder.map((kind) => (
