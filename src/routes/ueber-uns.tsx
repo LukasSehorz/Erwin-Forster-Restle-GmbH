@@ -38,14 +38,14 @@ const schwerpunkte = [
 ];
 
 const galerie = [
-  { datei: "Dach_kupfer.jpg", alt: "Fertige Dachfläche aus Kupfer" },
-  { datei: "Dach-Alu.jpg", alt: "Dacheindeckung aus Aluminium" },
-  { datei: "Dach_Gaube1.jpg", alt: "Verkleidete Gaube nach der Fertigstellung" },
-  { datei: "kamin01.jpg", alt: "Kamineinfassung aus Kupfer" },
-  { datei: "Fenster_Rund2.jpg", alt: "Rundes Dachfenster mit Metalleinfassung" },
-  { datei: "zwiebelturm01.jpg", alt: "Eingedeckter Zwiebelturm" },
-  { datei: "zimmerer.jpg", alt: "Zimmererarbeiten an einer Dachkonstruktion" },
-  { datei: "Dach01.jpg", alt: "Neu gedecktes Ziegeldach" },
+  { datei: "spenglerei-1.jpg", alt: "Fertige Dachfläche aus Kupfer" },
+  { datei: "spenglerei-2.jpg", alt: "Dacheindeckung aus Aluminium" },
+  { datei: "spenglerei-3.jpg", alt: "Verkleidete Gaube nach der Fertigstellung" },
+  { datei: "dachdecker-6.jpg", alt: "Kamineinfassung aus Kupfer" },
+  { datei: "fenster.jpg", alt: "Rundes Dachfenster mit Metalleinfassung" },
+  { datei: "spenglerei-5.jpg", alt: "Eingedeckter Zwiebelturm" },
+  { datei: "dachdecker-7.jpg", alt: "Zimmererarbeiten an einer Dachkonstruktion" },
+  { datei: "dachdecker-1.jpg", alt: "Neu gedecktes Ziegeldach" },
 ];
 
 function UeberUns() {
@@ -78,10 +78,6 @@ function UeberUns() {
                 Als regional verwurzeltes Unternehmen legen wir besonderen Wert auf eine persönliche
                 Beratung auf Augenhöhe. Wir begleiten Sie von der ersten Idee bis zur finalen
                 Umsetzung Ihres Projekts.
-              </p>
-              <p className="text-muted-foreground">
-                Geschäftsführer ist {betrieb.geschaeftsfuehrer}. Das Büro erreichen Sie{" "}
-                {betrieb.oeffnungszeiten}.
               </p>
               <p className="text-muted-foreground">
                 {betrieb.emailHinweis}:{" "}

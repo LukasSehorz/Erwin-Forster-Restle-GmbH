@@ -26,6 +26,22 @@ const dateinamen = [
   "Taubenabwehr.jpg",
   "zimmerer.jpg",
   "zwiebelturm01.jpg",
+  // Neue Fotos des Betriebs, Zuordnung nach den Dateinamen des Kunden.
+  "dachbegruenung.jpg",
+  "dachdecker-1.jpg",
+  "dachdecker-2.jpg",
+  "dachdecker-3.jpg",
+  "dachdecker-4.jpg",
+  "dachdecker-6.jpg",
+  "dachdecker-7.jpg",
+  "fenster.jpg",
+  "fenster-allgemein.jpg",
+  "spenglerei-1.jpg",
+  "spenglerei-2.jpg",
+  "spenglerei-3.jpg",
+  "spenglerei-4.jpg",
+  "spenglerei-5.jpg",
+  "spenglerei-6.jpg",
 ] as const;
 
 export const bilder: Record<string, string> = Object.fromEntries(

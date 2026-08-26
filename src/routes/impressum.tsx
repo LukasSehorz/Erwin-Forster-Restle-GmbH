@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SeitenKopf, Abschnitt } from "@/components/SeitenKopf";
-import { betrieb } from "@/lib/betrieb";
+import { agentur, betrieb } from "@/lib/betrieb";
 
 export const Route = createFileRoute("/impressum")({
   head: () => ({
@@ -67,6 +67,21 @@ function Impressum() {
           <Platzhalter titel="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV" />
           <Platzhalter titel="Hinweis zur Streitbeilegung" />
           <Platzhalter titel="Haftung für Inhalte und Links, Urheberrecht" />
+
+          <section>
+            <h2 className="text-2xl">Webseite</h2>
+            <p className="mt-3">
+              Gestaltung und Umsetzung:{" "}
+              <a
+                href={agentur.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary underline underline-offset-4"
+              >
+                {agentur.name}
+              </a>
+            </p>
+          </section>
         </div>
       </Abschnitt>
     </>

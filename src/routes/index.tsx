@@ -11,13 +11,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Erwin Restle GmbH in München Allach-Untermenzing: Spenglerei, Dachdeckerei, Zimmerei, Reparatur und Dachwartung, Absturzsicherung und Taubenabwehr. Seit 1985 in München und Umgebung. Telefon 089 8202 0441.",
+          "Erwin Restle GmbH in München Allach-Untermenzing: Spenglerei, Dachdeckerei, Reparatur und Dachwartung, Absturzsicherung, Taubenabwehr und Dachbegrünung. Seit 1985 in München und Umgebung. Telefon 089 8202 0441.",
       },
       { property: "og:title", content: "Ihr Dach in besten Händen – seit 1985" },
       {
         property: "og:description",
         content:
-          "Spenglerei, Dachdeckerei, Zimmerei, Reparatur und Dachwartung, Absturzsicherung und Taubenabwehr aus Allach-Untermenzing – seit 1985.",
+          "Spenglerei, Dachdeckerei, Reparatur und Dachwartung, Absturzsicherung, Taubenabwehr und Dachbegrünung aus Allach-Untermenzing – seit 1985.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -31,37 +31,37 @@ const kacheln = [
   {
     titel: "Spenglerei",
     to: "/spenglerei" as const,
-    datei: "Dach_kupfer.jpg",
-    alt: "Dachfläche aus Kupfer mit angearbeiteter Rinne",
+    datei: "spenglerei-1.jpg",
+    alt: "Spenglerarbeiten am Dach",
     text: "Dächer und Bauteile aus Kupfer, Aluminium und Blech, dazu Rinnen, Fallrohre und Kamineinfassungen.",
   },
   {
     titel: "Dachdeckerei",
     to: "/dachdeckerei" as const,
-    datei: "Dach01.jpg",
-    alt: "Neu eingedecktes Ziegeldach eines Wohnhauses in München",
+    datei: "dachdecker-1.jpg",
+    alt: "Neu eingedecktes Dach eines Wohnhauses in München",
     text: "Dächer neu decken und reparieren, abdichten, Brandschutzwände, energetische Dachsanierung und Dachflächenfenster.",
   },
   {
-    titel: "Zimmerei & Holzbau",
-    to: "/zimmerei" as const,
-    datei: "zimmerer.jpg",
-    alt: "Zimmerer bei der Arbeit an einer Dachkonstruktion aus Holz",
-    text: "Dachstühle, Fachwerk, Balkone und Carports – gefertigt, errichtet und instand gesetzt.",
+    titel: "Dachbegrünung",
+    to: "/dachbegruenung" as const,
+    datei: "dachbegruenung.jpg",
+    alt: "Begrünte Flachdachfläche mit Kiesstreifen",
+    text: "Ungenutzte Dachflächen werden zu lebendigen Ökosystemen – und schützen zugleich die Bausubstanz.",
   },
   {
     titel: "Reparatur & Dachwartung",
     to: "/reparatur-dachwartung" as const,
-    datei: "Dach_Gaube2.jpg",
-    alt: "Gaube mit sauberem Anschluss an die Dachfläche",
+    datei: "dachdecker-3.jpg",
+    alt: "Instandgesetzte Dachfläche nach der Reparatur",
     text: "Sturmschäden, undichte Stellen, Rinnenreinigung und die regelmäßige Kontrolle Ihres Dachs.",
   },
   {
     titel: "Absturzsicherung",
     to: "/sekuranten" as const,
-    datei: "Dach-Alu.jpg",
+    datei: "dachdecker-4.jpg",
     alt: "Dachfläche, die für Wartung und Kontrolle sicher begehbar sein muss",
-    text: "Sekuranten, Seil- und Schienensysteme sowie sichere Zugänge und Laufwege – inklusive Prüfung.",
+    text: "Sekuranten, Seilsicherungssysteme sowie sichere Zugänge und Laufwege – inklusive Prüfung.",
   },
   {
     titel: "Taubenabwehr",
@@ -107,7 +107,7 @@ function Startseite() {
       <Reveal as="section" stil="falten" className="scroll-mt-24">
         <div id="leistungen" className="mx-auto max-w-6xl px-5 pb-14 md:pb-20">
           <h2 className="text-center text-2xl md:text-4xl">
-            Wir sind Ihr kompetenter Partner für Dach, Metall und Holz
+            Wir sind Ihr kompetenter Partner rund um Ihr Dach
           </h2>
           <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {kacheln.map((kachel) => (
@@ -142,8 +142,8 @@ function Startseite() {
               <p className="mt-5 text-lg text-muted-foreground">
                 Unser Unternehmen, die Dachdeckerei Spenglerei Erwin Restle, existiert seit{" "}
                 {betrieb.gegruendet} und ist seit dieser Zeit ein Begriff für zuverlässig
-                ausgeführte Dachdecker- und Spenglerarbeiten in München und Umgebung. Dach, Metall
-                und Holz kommen bei uns aus einer Hand – das spart Absprachen und Wartezeit.
+                ausgeführte Dachdecker- und Spenglerarbeiten in München und Umgebung. Dach und Metall
+                kommen bei uns aus einer Hand – das spart Absprachen und Wartezeit.
                 Gearbeitet wird mit einer festen Mannschaft.
               </p>
               <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-lg font-semibold">

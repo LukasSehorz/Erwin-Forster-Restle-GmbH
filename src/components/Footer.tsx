@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { betrieb, navigationFlach } from "@/lib/betrieb";
+import { agentur, betrieb, navigationFlach } from "@/lib/betrieb";
 import { LogoZeichen } from "./Header";
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
           <p className="mt-3 text-[17px] text-muted-foreground">
             Familienbetrieb aus {betrieb.ort} {betrieb.stadtteil} – seit {betrieb.gegruendet}{" "}
-            Spenglerei, Dachdeckerei sowie Holz- und Bautenschutz aus einer Hand.
+            Spenglerei und Dachdeckerei aus einer Hand.
           </p>
         </div>
 
@@ -108,6 +108,14 @@ export function Footer() {
           <Link to="/datenschutz" className="hover:text-primary hover:underline">
             Datenschutz
           </Link>
+          <a
+            href={agentur.url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-muted-foreground hover:text-primary hover:underline"
+          >
+            {agentur.hinweis}
+          </a>
         </div>
       </div>
     </footer>

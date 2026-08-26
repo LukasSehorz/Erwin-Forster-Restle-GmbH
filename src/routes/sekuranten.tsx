@@ -12,13 +12,13 @@ export const Route = createFileRoute("/sekuranten")({
       {
         name: "description",
         content:
-          "Dachverkehrssicherheit in München: Einzelanschlagpunkte (Sekuranten), Seil- und Schienensicherungssysteme, sichere Dachzugänge sowie Prüfung und Wartung.",
+          "Dachverkehrssicherheit in München: Einzelanschlagpunkte (Sekuranten), Seilsicherungssysteme, sichere Dachzugänge sowie Prüfung und Wartung.",
       },
       { property: "og:title", content: "Sekuranten – Absturzsicherung am Dach" },
       {
         property: "og:description",
         content:
-          "Anschlagpunkte, Seil- und Schienensysteme, sichere Verkehrswege am Dach – montiert und gewartet vom Betrieb in Allach-Untermenzing.",
+          "Anschlagpunkte, Seilsicherungssysteme, sichere Verkehrswege am Dach – montiert und gewartet vom Betrieb in Allach-Untermenzing.",
       },
       { property: "og:url", content: "/sekuranten" },
     ],
@@ -37,10 +37,6 @@ const systeme = [
     text: "Horizontale Sicherungssysteme entlang festgelegter Arbeits- und Verkehrsbereiche. Das mitlaufende Verbindungsmittel bleibt beim Gehen eingehängt, so lassen sich auch größere Dachflächen durchgehend gesichert begehen.",
   },
   {
-    titel: "Schienensicherungssysteme",
-    text: "Feste Führungssysteme mit beweglichem Anschlagpunkt. Sie sind vor allem dort sinnvoll, wo Wartungs- und Verkehrswege regelmäßig genutzt werden und ein sauber definierter Laufweg gebraucht wird.",
-  },
-  {
     titel: "Sichere Dachzugänge und Verkehrswege",
     text: "Wir planen Zugänge, Laufwege und Arbeitsbereiche so, dass Wartung, Reinigung und technische Arbeiten am Dach ohne Improvisation möglich sind – vom Ausstieg bis zur letzten Anlage auf der Fläche.",
   },
@@ -56,7 +52,7 @@ function Sekuranten() {
       <SeitenKopf
         kicker="Dachverkehrssicherheit"
         ueberschrift="Sekuranten und Absturzsicherung"
-        einleitung="Damit auf dem Dach sicher gearbeitet werden kann: Anschlagpunkte, Seil- und Schienensysteme sowie sichere Wege für Wartung und Kontrolle."
+        einleitung="Damit auf dem Dach sicher gearbeitet werden kann: Anschlagpunkte, Seilsicherungssysteme sowie sichere Wege für Wartung und Kontrolle."
       />
 
       <Abschnitt>
@@ -69,6 +65,11 @@ function Sekuranten() {
                   Reinigung der Rinne, den Schornsteinfeger oder die Kontrolle der Dachfläche
                   selbst. Absturzsicherung sorgt dafür, dass das nicht zur Ausnahmesituation wird,
                   sondern zur normalen, gesicherten Arbeit.
+                </p>
+                <p>
+                  Die Verwendung und Platzierung von Einzelanschlagpunkten und anderen Systemen
+                  unterliegt diversen Regeln und Normen – zu finden beispielsweise bei der DGUV
+                  oder innerhalb der DIN EN 795.
                 </p>
                 <p className="text-muted-foreground">
                   Wir planen und montieren die passende Lösung für Ihr Dach, binden sie dicht in
@@ -96,8 +97,8 @@ function Sekuranten() {
                 verhaeltnis="4/3"
               />
               <Bild
-                datei="kamin01.jpg"
-                alt="Kaminbereich am Dach – typischer Ort für einen festen Anschlagpunkt"
+                datei="dachdecker-4.jpg"
+                alt="Dachfläche, die für Wartung und Kontrolle sicher begehbar sein muss"
                 verhaeltnis="4/3"
               />
             </div>

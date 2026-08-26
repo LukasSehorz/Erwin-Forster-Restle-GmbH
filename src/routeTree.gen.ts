@@ -23,7 +23,6 @@ import { Route as SpenglereiRouteImport } from './routes/spenglerei'
 import { Route as TaubenabwehrRouteImport } from './routes/taubenabwehr'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
-import { Route as ZimmereiRouteImport } from './routes/zimmerei'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -95,11 +94,6 @@ const UeberUnsRoute = UeberUnsRouteImport.update({
   path: '/ueber-uns',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ZimmereiRoute = ZimmereiRouteImport.update({
-  id: '/zimmerei',
-  path: '/zimmerei',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -116,7 +110,6 @@ export interface FileRoutesByFullPath {
   '/taubenabwehr': typeof TaubenabwehrRoute
   '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
-  '/zimmerei': typeof ZimmereiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -133,7 +126,6 @@ export interface FileRoutesByTo {
   '/taubenabwehr': typeof TaubenabwehrRoute
   '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
-  '/zimmerei': typeof ZimmereiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -151,7 +143,6 @@ export interface FileRoutesById {
   '/taubenabwehr': typeof TaubenabwehrRoute
   '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
-  '/zimmerei': typeof ZimmereiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -170,7 +161,6 @@ export interface FileRouteTypes {
     | '/taubenabwehr'
     | '/team'
     | '/ueber-uns'
-    | '/zimmerei'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -187,7 +177,6 @@ export interface FileRouteTypes {
     | '/taubenabwehr'
     | '/team'
     | '/ueber-uns'
-    | '/zimmerei'
   id:
     | '__root__'
     | '/'
@@ -204,7 +193,6 @@ export interface FileRouteTypes {
     | '/taubenabwehr'
     | '/team'
     | '/ueber-uns'
-    | '/zimmerei'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -222,7 +210,6 @@ export interface RootRouteChildren {
   TaubenabwehrRoute: typeof TaubenabwehrRoute
   TeamRoute: typeof TeamRoute
   UeberUnsRoute: typeof UeberUnsRoute
-  ZimmereiRoute: typeof ZimmereiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -325,13 +312,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UeberUnsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/zimmerei': {
-      id: '/zimmerei'
-      path: '/zimmerei'
-      fullPath: '/zimmerei'
-      preLoaderRoute: typeof ZimmereiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -350,7 +330,6 @@ const rootRouteChildren: RootRouteChildren = {
   TaubenabwehrRoute: TaubenabwehrRoute,
   TeamRoute: TeamRoute,
   UeberUnsRoute: UeberUnsRoute,
-  ZimmereiRoute: ZimmereiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

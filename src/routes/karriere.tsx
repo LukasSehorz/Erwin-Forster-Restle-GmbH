@@ -128,9 +128,9 @@ function Karriere() {
       <Abschnitt>
         <div className="grid gap-10 md:grid-cols-3">
           {[
-            { datei: "Dach_kupfer.jpg", alt: "Arbeit an einer Dachfläche aus Kupfer" },
-            { datei: "Dach_Gaube1.jpg", alt: "Gaube während der Ausführung" },
-            { datei: "zimmerer.jpg", alt: "Zimmererarbeiten auf der Baustelle" },
+            { datei: "spenglerei-1.jpg", alt: "Arbeit an einer Dachfläche aus Metall" },
+            { datei: "dachdecker-6.jpg", alt: "Dacharbeiten während der Ausführung" },
+            { datei: "dachdecker-7.jpg", alt: "Arbeiten auf der Baustelle" },
           ].map((bild, index) => (
             <Reveal key={bild.datei} delay={index as 0 | 1 | 2}>
               <Bild datei={bild.datei} alt={bild.alt} verhaeltnis="4/3" />

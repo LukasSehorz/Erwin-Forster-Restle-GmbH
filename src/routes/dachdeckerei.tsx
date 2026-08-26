@@ -96,13 +96,13 @@ function Dachdeckerei() {
           <Reveal delay={1}>
             <div className="space-y-5 md:sticky md:top-28">
               <Bild
-                datei="Dach01.jpg"
+                datei="dachdecker-1.jpg"
                 alt="Fertig gedecktes Ziegeldach eines Wohnhauses"
                 verhaeltnis="4/3"
               />
               <Bild
-                datei="Dach_Gaube2.jpg"
-                alt="Gaube mit sauberem Anschluss an die Dachfläche"
+                datei="dachdecker-2.jpg"
+                alt="Sanierte Dachfläche mit sauberen Anschlüssen"
                 verhaeltnis="4/3"
               />
             </div>
@@ -115,9 +115,9 @@ function Dachdeckerei() {
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl">Dachbegrünung</h2>
             <p className="mt-5 text-lg text-muted-foreground">
-              Die wurzelfeste Abdichtung, die Anschlüsse und die Entwässerung für ein begrüntes Dach
-              führen wir aus. Die Begrünung selbst übernimmt ein spezialisierter Fachbetrieb, an den
-              wir Sie gerne vermitteln.
+              Eine professionelle Dachbegrünung verwandelt ungenutzte Dachflächen in lebendige
+              Ökosysteme und schützt gleichzeitig nachhaltig Ihre Bausubstanz – von der
+              pflegeleichten Sedum-Begrünung für Garagen bis hin zum begehbaren Dachgarten.
             </p>
             <p className="mt-5 text-lg">
               <Link

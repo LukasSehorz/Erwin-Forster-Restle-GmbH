@@ -78,23 +78,23 @@ function Spenglerei() {
           <Reveal delay={1}>
             <div className="grid grid-cols-2 gap-4">
               <Bild
-                datei="Dach_kupfer.jpg"
+                datei="spenglerei-1.jpg"
                 alt="Dachfläche aus Kupfer nach der Fertigstellung"
                 verhaeltnis="4/3"
               />
               <Bild
-                datei="Dach-Alu.jpg"
-                alt="Dacheindeckung aus Aluminium an einem Wohnhaus"
+                datei="spenglerei-2.jpg"
+                alt="Metalleindeckung an einem Wohnhaus"
                 verhaeltnis="4/3"
               />
-              <Bild datei="Dach_Gaube1.jpg" alt="Mit Metall verkleidete Gaube" verhaeltnis="4/3" />
+              <Bild datei="spenglerei-3.jpg" alt="Spenglerarbeiten an einer Gaube" verhaeltnis="4/3" />
               <Bild
-                datei="Dach_Gaube2.jpg"
-                alt="Zweite Ansicht einer fertig ausgeführten Gaube"
+                datei="spenglerei-4.jpg"
+                alt="Fertig ausgeführte Spenglerarbeit"
                 verhaeltnis="4/3"
               />
               <Bild
-                datei="kamin01.jpg"
+                datei="spenglerei-5.jpg"
                 alt="Kamineinfassung aus Kupfer auf einem Ziegeldach"
                 verhaeltnis="4/3"
                 className="col-span-2 md:max-w-md"
@@ -121,29 +121,29 @@ function Spenglerei() {
         <div className="mt-10 grid gap-5 md:grid-cols-4">
           <Reveal>
             <Bild
-              datei="zwiebelturm01.jpg"
-              alt="Mit Metall eingedeckter Zwiebelturm"
+              datei="spenglerei-2.jpg"
+              alt="Spenglerarbeiten aus Metall am Dach"
               verhaeltnis="4/5"
             />
           </Reveal>
           <Reveal delay={1}>
             <Bild
-              datei="Fenster_Rund2.jpg"
-              alt="Rundes Dachfenster mit handgefertigter Metalleinfassung"
+              datei="spenglerei-6.jpg"
+              alt="Sonderanfertigung aus Blech am Dach"
               verhaeltnis="4/5"
             />
           </Reveal>
           <Reveal delay={2}>
             <Bild
-              datei="Fenster_Rund3.jpg"
-              alt="Detail einer runden Fenstereinfassung aus Blech"
+              datei="fenster.jpg"
+              alt="Dachfenster mit Metalleinfassung"
               verhaeltnis="4/5"
             />
           </Reveal>
           <Reveal delay={2}>
             <Bild
-              datei="Fenster_Rund4.jpg"
-              alt="Fertig eingebautes Rundfenster im Dach"
+              datei="fenster-allgemein.jpg"
+              alt="Eingebautes Dachfenster"
               verhaeltnis="4/5"
             />
           </Reveal>

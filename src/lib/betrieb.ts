@@ -32,7 +32,6 @@ export const navigation = [
     kinder: [
       { to: "/spenglerei", label: "Spenglerei" },
       { to: "/dachdeckerei", label: "Dachdeckerei" },
-      { to: "/zimmerei", label: "Zimmerei & Holzbau" },
     ],
   },
   { to: "/reparatur-dachwartung", label: "Reparatur & Dachwartung" },
@@ -63,3 +62,10 @@ export type NavZiel = Exclude<NavEintrag, NavOrdner> | NavOrdner["kinder"][numbe
 export const navigationFlach = navigation.flatMap<NavZiel>((punkt) =>
   "kinder" in punkt ? [...punkt.kinder] : [punkt],
 );
+
+/** Umsetzung der Website – verlinkt im Footer und im Impressum. */
+export const agentur = {
+  name: "Flowstate",
+  url: "https://flowstateai.de/",
+  hinweis: "Webseite erstellt von Flowstate",
+} as const;

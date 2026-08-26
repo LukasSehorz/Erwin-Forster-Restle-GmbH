@@ -1,5 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Bild } from "@/components/Bild";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { SeitenKopf, Abschnitt } from "@/components/SeitenKopf";
 import { RecruitingBanner } from "@/components/RecruitingBanner";
@@ -37,8 +36,8 @@ const arbeiten = [
     text: "Wo Wasser durchkommt, ist der Fleck an der Decke selten die Ursache. Wir suchen die Stelle am Dach, prüfen Anschlüsse, Kehlen und Durchdringungen und reparieren gezielt statt großflächig.",
   },
   {
-    titel: "Regelmäßige Dachwartung",
-    text: "Bei der Wartung kontrollieren wir Eindeckung, Anschlüsse, Abdichtung und Entwässerung, tauschen einzelne beschädigte Ziegel aus und ziehen lose Bauteile nach. Kleine Mängel bleiben so klein.",
+    titel: "Dachdurchsicht",
+    text: "Bei der Durchsicht kontrollieren wir Eindeckung, Anschlüsse, Abdichtung und Entwässerung, tauschen einzelne beschädigte Ziegel aus und ziehen lose Bauteile nach. Kleine Mängel bleiben so klein.",
   },
   {
     titel: "Rinnen und Fallrohre reinigen",
@@ -60,7 +59,7 @@ function ReparaturDachwartung() {
       />
 
       <Abschnitt>
-        <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
+        <div>
           <div className="space-y-10">
             <Reveal>
               <div className="max-w-xl space-y-5 text-lg">
@@ -86,25 +85,43 @@ function ReparaturDachwartung() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={1}>
-            <div className="space-y-5 md:sticky md:top-28">
-              <Bild
-                datei="Dach_Gaube2.jpg"
-                alt="Gaube mit sauberem Anschluss an die Dachfläche nach der Instandsetzung"
-                verhaeltnis="4/3"
-              />
-              <Bild
-                datei="Dach_Gaube1.jpg"
-                alt="Verkleidete Gaube nach der Reparatur"
-                verhaeltnis="4/3"
-              />
-            </div>
-          </Reveal>
         </div>
       </Abschnitt>
 
       <Abschnitt grau>
+        <Reveal>
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl">Dachwartung nur mit Verkehrssicherheit</h2>
+            <div className="mt-5 space-y-5 text-lg">
+              <p>
+                Wir bieten Wartungsverträge konsequent nur in Verbindung mit der gesetzlichen
+                Dachverkehrssicherheit an. Nach den Unfallverhütungsvorschriften der
+                Berufsgenossenschaft (BG BAU) dürfen Dachflächen nur mit ordnungsgemäßen
+                Absturzsicherungen betreten werden. Sollten diese Vorrichtungen an Ihrem Gebäude
+                fehlen, rüsten wir sie fachgerecht für Sie nach.
+              </p>
+              <p>
+                So sichern Sie den Werterhalt Ihrer Immobilie und erfüllen lückenlos alle
+                rechtlichen Auflagen gegenüber Handwerkern und Passanten.
+              </p>
+              <p className="font-semibold">
+                Sichern Sie Ihr Dach jetzt rechtlich und fachlich ab – kontaktieren Sie uns für Ihr
+                individuelles Angebot!
+              </p>
+              <p>
+                <Link
+                  to="/sekuranten"
+                  className="font-semibold text-primary underline underline-offset-4"
+                >
+                  Mehr zur Absturzsicherung
+                </Link>
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </Abschnitt>
+
+      <Abschnitt>
         <Reveal>
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl">Wasser im Haus? Rufen Sie an.</h2>
