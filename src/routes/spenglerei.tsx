@@ -82,17 +82,7 @@ function Spenglerei() {
                 alt="Dachfläche aus Kupfer nach der Fertigstellung"
                 verhaeltnis="4/3"
               />
-              <Bild
-                datei="spenglerei-2.jpg"
-                alt="Metalleindeckung an einem Wohnhaus"
-                verhaeltnis="4/3"
-              />
               <Bild datei="spenglerei-3.jpg" alt="Spenglerarbeiten an einer Gaube" verhaeltnis="4/3" />
-              <Bild
-                datei="spenglerei-4.jpg"
-                alt="Fertig ausgeführte Spenglerarbeit"
-                verhaeltnis="4/3"
-              />
               <Bild
                 datei="spenglerei-5.jpg"
                 alt="Kamineinfassung aus Kupfer auf einem Ziegeldach"
@@ -118,25 +108,18 @@ function Spenglerei() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid max-w-4xl grid-cols-2 gap-5 md:grid-cols-3">
+        <div className="mt-10 grid max-w-2xl grid-cols-2 gap-5">
           <Reveal>
             <Bild
               datei="spenglerei-2.jpg"
-              alt="Spenglerarbeiten aus Metall am Dach"
+              alt="Dachterrasse mit Holzbelag und Glasfront"
               verhaeltnis="4/5"
             />
           </Reveal>
           <Reveal delay={1}>
             <Bild
-              datei="spenglerei-6.jpg"
-              alt="Sonderanfertigung aus Blech am Dach"
-              verhaeltnis="4/5"
-            />
-          </Reveal>
-          <Reveal delay={2}>
-            <Bild
               datei="spenglerei-4.jpg"
-              alt="Turm mit runden Fenstern"
+              alt="Turm mit runden Fenstern und Metalleinfassung"
               verhaeltnis="4/5"
             />
           </Reveal>
