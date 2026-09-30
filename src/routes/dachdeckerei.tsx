@@ -29,8 +29,6 @@ export const Route = createFileRoute("/dachdeckerei")({
 type Thema = {
   titel: string;
   text: string;
-  /** Auf Kundenwunsch im Entwurf rot hervorgehoben. */
-  hervorheben?: boolean;
 };
 
 const themen: Thema[] = [
@@ -45,7 +43,6 @@ const themen: Thema[] = [
   {
     titel: "Brandschutzwände",
     text: "Brandschutzwände führen wir fachgerecht aus und schließen sie dicht an die Dachfläche an.",
-    hervorheben: true,
   },
   {
     titel: "Energetische Dachsanierung",
@@ -71,38 +68,40 @@ function Dachdeckerei() {
           <div className="space-y-10">
             {themen.map((thema, index) => (
               <Reveal key={thema.titel} delay={index < 3 ? ((index % 3) as 0 | 1 | 2) : 0}>
-                <div
-                  className={
-                    thema.hervorheben
-                      ? "border-l-2 border-primary bg-primary/5 py-4 pl-6"
-                      : "border-l-2 border-primary pl-6"
-                  }
-                >
-                  <h2 className={`text-2xl ${thema.hervorheben ? "text-primary" : ""}`}>
-                    {thema.titel}
-                  </h2>
-                  <p
-                    className={`mt-3 max-w-xl text-lg ${
-                      thema.hervorheben ? "font-semibold text-primary" : "text-muted-foreground"
-                    }`}
-                  >
-                    {thema.text}
-                  </p>
+                <div className="border-l-2 border-primary pl-6">
+                  <h2 className="text-2xl">{thema.titel}</h2>
+                  <p className="mt-3 max-w-xl text-lg text-muted-foreground">{thema.text}</p>
                 </div>
               </Reveal>
             ))}
           </div>
 
           <Reveal delay={1}>
-            <div className="space-y-5 md:sticky md:top-28">
+            <div className="grid grid-cols-2 gap-4 md:sticky md:top-28">
               <Bild
                 datei="dachdecker-1.jpg"
                 alt="Fertig gedecktes Ziegeldach eines Wohnhauses"
                 verhaeltnis="4/3"
+                className="col-span-2"
               />
               <Bild
                 datei="dachdecker-2.jpg"
                 alt="Sanierte Dachfläche mit sauberen Anschlüssen"
+                verhaeltnis="4/3"
+              />
+              <Bild
+                datei="fenster-allgemein.jpg"
+                alt="Eingebaute Dachflächenfenster mit dichtem Anschluss an die Dachhaut"
+                verhaeltnis="4/3"
+              />
+              <Bild
+                datei="dachdecker-8.jpg"
+                alt="Ziegeldach mit Kamineinfassungen und Zinkdeckung"
+                verhaeltnis="4/3"
+              />
+              <Bild
+                datei="dachdecker-9.jpg"
+                alt="Neubau mit weißer Metallfassade und großen Schiebefenstern"
                 verhaeltnis="4/3"
               />
             </div>

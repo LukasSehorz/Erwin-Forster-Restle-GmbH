@@ -118,7 +118,7 @@ function Spenglerei() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-4">
+        <div className="mt-10 grid max-w-4xl grid-cols-2 gap-5 md:grid-cols-3">
           <Reveal>
             <Bild
               datei="spenglerei-2.jpg"
@@ -135,15 +135,8 @@ function Spenglerei() {
           </Reveal>
           <Reveal delay={2}>
             <Bild
-              datei="fenster.jpg"
-              alt="Dachfenster mit Metalleinfassung"
-              verhaeltnis="4/5"
-            />
-          </Reveal>
-          <Reveal delay={2}>
-            <Bild
-              datei="fenster-allgemein.jpg"
-              alt="Eingebautes Dachfenster"
+              datei="spenglerei-4.jpg"
+              alt="Turm mit runden Fenstern"
               verhaeltnis="4/5"
             />
           </Reveal>

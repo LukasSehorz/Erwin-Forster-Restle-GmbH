@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bild } from "@/components/Bild";
 import { Reveal } from "@/components/Reveal";
 import { SeitenKopf, Abschnitt } from "@/components/SeitenKopf";
 import { RecruitingBanner } from "@/components/RecruitingBanner";
@@ -56,13 +55,13 @@ function Sekuranten() {
       />
 
       <Abschnitt>
-        <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
+        <div>
           <div className="space-y-10">
             <Reveal>
               <div className="max-w-xl space-y-5 text-lg">
                 <p>
-                  Jedes Dach wird irgendwann wieder betreten – für die Wartung der Heizung, die
-                  Reinigung der Rinne, den Schornsteinfeger oder die Kontrolle der Dachfläche
+                  Jedes Dach wird irgendwann wieder betreten – für die Reinigung der
+                  Rinne, den Schornsteinfeger oder die Kontrolle der Dachfläche
                   selbst. Absturzsicherung sorgt dafür, dass das nicht zur Ausnahmesituation wird,
                   sondern zur normalen, gesicherten Arbeit.
                 </p>
@@ -88,21 +87,6 @@ function Sekuranten() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={1}>
-            <div className="space-y-5 md:sticky md:top-28">
-              <Bild
-                datei="Dach01.jpg"
-                alt="Dachfläche eines Wohnhauses, auf der Wartungsarbeiten anfallen"
-                verhaeltnis="4/3"
-              />
-              <Bild
-                datei="dachdecker-4.jpg"
-                alt="Dachfläche, die für Wartung und Kontrolle sicher begehbar sein muss"
-                verhaeltnis="4/3"
-              />
-            </div>
-          </Reveal>
         </div>
       </Abschnitt>
 

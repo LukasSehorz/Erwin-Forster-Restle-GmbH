@@ -34,6 +34,8 @@ const dateinamen = [
   "dachdecker-4.jpg",
   "dachdecker-6.jpg",
   "dachdecker-7.jpg",
+  "dachdecker-8.jpg",
+  "dachdecker-9.jpg",
   "fenster.jpg",
   "fenster-allgemein.jpg",
   "spenglerei-1.jpg",

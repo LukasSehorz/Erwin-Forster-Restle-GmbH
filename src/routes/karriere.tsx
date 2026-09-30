@@ -6,7 +6,7 @@ import { SeitenKopf, Abschnitt } from "@/components/SeitenKopf";
 import { Feld } from "@/components/Feld";
 import { betrieb } from "@/lib/betrieb";
 import { bewerbungSchema, oeffneMailEntwurf } from "@/lib/formular";
-import { Phone, Mail, MessageCircle } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 export const Route = createFileRoute("/karriere")({
   head: () => ({
@@ -45,6 +45,7 @@ const stellen = [
       "Schwindelfreiheit",
     ],
     bieten: [
+      "Familiäres Miteinander, gutes Team und gute Atmosphäre",
       "Abwechslung: von der Standardrinne bis zur Sonderanfertigung",
       "Fortbildungen und Weiterbildungen",
       "Pünktliche Bezahlung",
@@ -64,6 +65,7 @@ const stellen = [
       "Schwindelfreiheit",
     ],
     bieten: [
+      "Familiäres Miteinander, gutes Team und gute Atmosphäre",
       "Abwechslung: Ziegeleindeckung, Flachdach und energetische Sanierung",
       "Fortbildungen und Weiterbildungen",
       "Pünktliche Bezahlung",
@@ -83,6 +85,7 @@ const stellen = [
       "Schwindelfreiheit, Führerschein Klasse B von Vorteil",
     ],
     bieten: [
+      "Familiäres Miteinander, gutes Team und gute Atmosphäre",
       "Einarbeitung durch erfahrene Kollegen",
       "Baustellen im Raum München und Umgebung, abends daheim",
       "Pünktliche Bezahlung",
@@ -102,6 +105,7 @@ const stellen = [
       "Deutschkenntnisse für Baustelle und Berufsschule",
     ],
     bieten: [
+      "Familiäres Miteinander, gutes Team und gute Atmosphäre",
       "Ausbildung im kleinen Betrieb mit festen Ansprechpartnern",
       "Überbetriebliche Weiterbildungen sowie schulische und interne Fort- und Weiterbildungen",
       "Übernahme bei guter Leistung",
@@ -110,6 +114,7 @@ const stellen = [
 ];
 
 const bieten = [
+  "Familiäres Miteinander, gutes Team und gute Atmosphäre",
   "Feste Mannschaft statt wechselnder Kolonnen",
   "Baustellen im Raum München und Umgebung – abends daheim",
   "Pünktliche Bezahlung",
@@ -191,13 +196,6 @@ function Karriere() {
               >
                 <Phone className="h-5 w-5" aria-hidden="true" />
                 {betrieb.telefonAnzeige}
-              </a>
-              <a
-                href={betrieb.whatsapp}
-                className="flex items-center gap-3 border border-foreground px-6 py-4 text-lg font-semibold transition-colors hover:bg-foreground hover:text-background"
-              >
-                <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                Über WhatsApp schreiben
               </a>
               <a
                 href={`mailto:${betrieb.email}?subject=${encodeURIComponent("Bewerbung")}`}

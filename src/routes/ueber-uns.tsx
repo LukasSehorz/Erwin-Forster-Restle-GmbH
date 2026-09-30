@@ -58,7 +58,7 @@ function UeberUns() {
       />
 
       <Abschnitt>
-        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-start">
+        <div>
           <Reveal>
             <div className="max-w-2xl space-y-5 text-lg">
               <p>
@@ -89,22 +89,11 @@ function UeberUns() {
                 </a>
               </p>
               <p className="flex flex-wrap gap-x-8 gap-y-2 font-semibold">
-                <Link to="/team" className="text-primary underline underline-offset-4">
-                  Unser Team kennenlernen
-                </Link>
                 <Link to="/karriere" className="text-primary underline underline-offset-4">
                   Wir suchen Verstärkung – offene Stellen
                 </Link>
               </p>
             </div>
-          </Reveal>
-
-          <Reveal delay={1}>
-            <Bild
-              datei="Arbeit_Spengler.jpg"
-              alt="Fertig ausgeführtes Dach mit Kupferrinne an einem Münchner Wohnhaus"
-              verhaeltnis="4/3"
-            />
           </Reveal>
         </div>
       </Abschnitt>
