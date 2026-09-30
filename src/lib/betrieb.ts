@@ -65,7 +65,7 @@ export const navigationFlach = navigation.flatMap<NavZiel>((punkt) =>
 
 /** Umsetzung der Website – verlinkt im Footer und im Impressum. */
 export const agentur = {
-  name: "Flowstate",
-  url: "https://flowstateai.de/",
-  hinweis: "Webseite erstellt von Flowstate",
+  name: "SvH Consulting",
+  url: "https://svh-consult.de/",
+  hinweis: "Webseite erstellt von SvH Consulting",
 } as const;
