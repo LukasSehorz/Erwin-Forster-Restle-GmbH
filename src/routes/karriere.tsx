@@ -40,7 +40,7 @@ const stellen = [
       "Allgemeine Reinigungsarbeiten rund um das Dach",
     ],
     erwartung: [
-      "Ausbildung als Spengler oder Klempner, gern auch Berufserfahrung im Metallbau am Dach",
+      "Ausbildung als Spengler, gern auch Berufserfahrung im Metallbau am Dach",
       "Sauberes Arbeiten und Freude an kniffligen Anschlüssen",
       "Schwindelfreiheit",
     ],
@@ -100,7 +100,7 @@ const stellen = [
       "Berufsschule und Betrieb im Wechsel",
     ],
     erwartung: [
-      "Schulabschluss, Pünktlichkeit und Lust auf Arbeit im Freien",
+      "Pünktlichkeit und Lust auf Arbeit im Freien",
       "Kein Problem mit Höhe",
       "Deutschkenntnisse für Baustelle und Berufsschule",
     ],
